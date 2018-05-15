@@ -38,7 +38,8 @@ developer =
        body: "Slow browser integration tests are a hard problem",
        channel: elixir_channel,
        developer: developer,
-       slug: Post.generate_slug()
+       slug: Post.generate_slug(),
+       is_public: true
      })
 
      Repo.insert!(%Post{
