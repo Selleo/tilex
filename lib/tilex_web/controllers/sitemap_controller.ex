@@ -3,7 +3,13 @@ defmodule TilexWeb.SitemapController do
 
   def index(conn, _) do
     conn
-    |> assign(:posts, Repo.all(Tilex.Post))
+    |> assign(
+      :posts,
+      from(
+        p in Tilex.Post,
+        where: p.is_public in ^show_only_public?(conn)
+      )
+    )
     |> put_layout(false)
     |> render("sitemap.xml")
   end

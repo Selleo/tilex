@@ -10,7 +10,7 @@ defmodule TilexWeb.DeveloperController do
       |> Map.get("page", "1")
       |> String.to_integer()
 
-    {posts, posts_count, developer} = Posts.by_developer(username, page)
+    {posts, posts_count, developer} = Posts.by_developer(username, page, only_public?: show_only_public?(conn))
 
     render(
       conn,

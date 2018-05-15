@@ -28,7 +28,7 @@ defmodule TilexWeb.PostController do
       |> Map.get("page", "1")
       |> String.to_integer()
 
-    {posts, posts_count} = Posts.by_search(search_query, page)
+    {posts, posts_count} = Posts.by_search(search_query, page, only_public?: show_only_public?(conn))
 
     render(
       conn,
@@ -49,7 +49,7 @@ defmodule TilexWeb.PostController do
       |> Map.get("page", "1")
       |> String.to_integer()
 
-    posts = Posts.all(page)
+    posts = Posts.all(page, only_public?: show_only_public?(conn))
 
     render(conn, "index.html", posts: posts, page: page)
   end

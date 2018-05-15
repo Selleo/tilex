@@ -36,6 +36,13 @@ defmodule TilexWeb do
 
       import TilexWeb.Router.Helpers
       import TilexWeb.Gettext
+
+      defp show_only_public?(conn) do
+        case Guardian.Plug.current_resource(conn) do
+          %Tilex.Developer{} -> false
+          _ -> true
+        end
+      end
     end
   end
 

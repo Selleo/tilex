@@ -11,13 +11,14 @@ defmodule Tilex.Post do
   @title_max_chars 50
   def title_max_chars, do: @title_max_chars
 
-  @params ~w(title body developer_id channel_id likes max_likes)a
+  @params ~w(title body is_public developer_id channel_id likes max_likes)a
   def permitted_params, do: @params
   def required_params, do: @params
 
   schema "posts" do
     field(:title, :string)
     field(:body, :string)
+    field(:is_public, :boolean)
     field(:slug, :string)
     field(:likes, :integer, default: 1)
     field(:max_likes, :integer, default: 1)

@@ -9,7 +9,7 @@ defmodule TilexWeb.ChannelController do
       |> Map.get("page", "1")
       |> String.to_integer()
 
-    {posts, posts_count, channel} = Posts.by_channel(channel_name, page)
+    {posts, posts_count, channel} = Posts.by_channel(channel_name, page, only_public?: show_only_public?(conn))
 
     render(
       conn,

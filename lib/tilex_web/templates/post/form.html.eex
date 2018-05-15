@@ -23,6 +23,13 @@
       %>
     </dd>
     <dt>
+      <%= label f, :is_public, "Make public?" %>
+      <%= error_tag f, :is_public %>
+    </dt>
+    <dd>
+      <%= checkbox f, :is_public %>
+    </dd>
+    <dt>
       <%= label f, :channel_id, "Channel" %>
       <%= error_tag f, :channel_id %>
     </dt>

@@ -33,6 +33,7 @@ defmodule Tilex.Mixfile do
     [
       {:appsignal, "~> 1.0"},
       {:basic_auth, "~> 2.1"},
+      {:bodyguard, "~> 2.2"},
       {:cachex, "~> 2.1"},
       {:cors_plug, "~> 1.2"},
       {:cowboy, "~> 1.0"},
