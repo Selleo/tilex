@@ -81,7 +81,7 @@ defmodule Tilex.Posts do
             plainto_tsquery('english', $1)
           ) as rank
         ) ranks on true
-        where ranks.rank > 0 and p.is_public in $2
+        where ranks.rank > 0 and p.is_public = ANY($2)
         order by ranks.rank desc, p.inserted_at desc
     """
 
