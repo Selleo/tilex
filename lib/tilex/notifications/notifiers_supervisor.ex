@@ -14,8 +14,7 @@ defmodule Tilex.Notifications.NotifiersSupervisor do
 
   def children do
     [
-      @slack_notifier,
-      @twitter_notifier
+      @slack_notifier
     ]
   end
 end
