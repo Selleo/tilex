@@ -1,0 +1,14 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <dl>
+    <dt>
+      <%= label f, :name %>
+      <%= error_tag f, :name %>
+      <small class="character_limit"></small>
+    </dt>
+    <dd>
+      <%= text_input f, :name, placeholder: "Enter channel name (only alphanumeric characters and '-' are allowed)" %>
+    </dd>
+  </dl>
+  <%= submit "Submit" %>
+  <%= link("cancel", to: "/") %>
+<% end %>

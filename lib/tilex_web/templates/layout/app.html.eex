@@ -46,7 +46,8 @@
         <ul>
           <li> <%= link(developer.username, to: developer_path(@conn, :show, developer)) %> </li>
           <li> <%= link("Sign Out", to: auth_path(@conn, :delete), method: :delete) %> </li>
-          <li> <%= link("Create Post", to: post_path(@conn, :new)) %> </li>
+          <li> <%= link("+ Create Post", to: post_path(@conn, :new)) %> </li>
+          <li> <%= link("+ Create Channel", to: channel_path(@conn, :new)) %> </li>
           <li> <%= link("Profile", to: developer_path(@conn, :edit)) %> </li>
         </ul>
       </nav>

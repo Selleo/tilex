@@ -49,7 +49,12 @@ defmodule TilexWeb.Router do
     get("/sitemap.xml", SitemapController, :index)
     get("/manifest.json", WebManifestController, :index)
     get("/random", PostController, :random)
+
+    # TODO: :new and :create aren't related to :show here, they should be in a different controller
     get("/:name", ChannelController, :show)
+    get("/channels/new", ChannelController, :new)
+    post("/channels", ChannelController, :create)
+
     get("/authors/:name", DeveloperController, :show)
     get("/profile/edit", DeveloperController, :edit)
     put("/profile/edit", DeveloperController, :update)

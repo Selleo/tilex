@@ -19,6 +19,7 @@ defmodule Tilex.Channel do
     |> cast(params, [:name, :twitter_hashtag])
     |> unique_constraint(:name)
     |> validate_required([:name, :twitter_hashtag])
+    |> validate_format(:name, ~r/\A[a-z0-9\-]+\z/)
   end
 
   def names_and_ids(query) do

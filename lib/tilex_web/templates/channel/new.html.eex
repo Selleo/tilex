@@ -1,0 +1,6 @@
+<section id="post_edit">
+  <header class='page_head'>
+    <h1>Create Channel</h1>
+  </header>
+  <%= render TilexWeb.ChannelView, "form.html", changeset: @changeset, action: channel_path(@conn, :create) %>
+</section>
