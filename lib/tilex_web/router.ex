@@ -60,7 +60,8 @@ defmodule TilexWeb.Router do
     put("/profile/edit", DeveloperController, :update)
 
     get("/", PostController, :index)
-    resources("/posts", PostController, param: "titled_slug")
+    resources("/posts", PostController, except: [:delete], param: "titled_slug")
+    resources("/posts", PostController, only: [:delete])
     post("/posts/:slug/like.json", PostController, :like)
     post("/posts/:slug/unlike.json", PostController, :unlike)
   end

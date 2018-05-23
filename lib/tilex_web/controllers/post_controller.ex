@@ -12,7 +12,7 @@ defmodule TilexWeb.PostController do
   plug(
     Plug.EnsureAuthenticated,
     [handler: __MODULE__]
-    when action in ~w(new create edit update)a
+    when action in ~w(new create edit update delete)a
   )
 
   def unauthenticated(conn, _) do
@@ -183,6 +183,33 @@ defmodule TilexWeb.PostController do
 
       {:error, changeset} ->
         render(conn, "edit.html", post: post, changeset: changeset)
+    end
+  end
+
+  def delete(conn, %{"id" => id}) do
+    current_user = Plug.current_resource(conn)
+
+    post =
+      case current_user.admin do
+        false ->
+          current_user
+          |> assoc(:posts)
+          |> where([p], p.id == ^id)
+          |> Repo.one()
+
+        true ->
+          Repo.get!(Post, id)
+      end
+
+    case Repo.delete(post) do
+      {:ok, _post} ->
+        conn
+        |> put_flash(:info, "Post deleted")
+        |> redirect(to: post_path(conn, :index))
+      {:error, _changeset} ->
+        conn
+        |> put_flash(:error, "Could not delete the post")
+        |> redirect(to: post_path(conn, :index))
     end
   end
 

@@ -42,6 +42,16 @@
               <%= link("edit", to: post_path(@conn, :edit, @post), class: "post__permalink") %>
             </li>
           <% end %>
+          <%= if TilexWeb.SharedView.post_creator_or_admin?(@conn, @post) do %>
+            <li>
+              <%=
+                link(
+                  "delete", to: post_path(@conn, :delete, @post.id), method: :delete,
+                  class: "post__delete-link", data: [confirm: "Are you sure?"]
+                )
+              %>
+            </li>
+          <% end %>
           <li>
             <%= link to: "#", class: "js-like-action post__like-link", id: @post.slug do %>
               <span class="post__like-count"><%= @post.likes %></span>
