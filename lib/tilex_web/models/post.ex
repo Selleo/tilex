@@ -5,10 +5,10 @@ defmodule Tilex.Post do
 
   alias Tilex.{Developer, Channel, Post}
 
-  @body_max_words 200
+  @body_max_words 500
   def body_max_words, do: @body_max_words
 
-  @title_max_chars 50
+  @title_max_chars 55
   def title_max_chars, do: @title_max_chars
 
   @params ~w(title body is_public developer_id channel_id likes max_likes)a
