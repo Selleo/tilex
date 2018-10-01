@@ -40,7 +40,8 @@ config :ueberauth, Ueberauth,
        [
          approval_prompt: "force",
          access_type: "offline",
-         default_scope: "email profile"
+         default_scope: "email profile",
+         callback_url: System.get_env("GOOGLE_CALLBACK_URI")
        ]}
   ]
 
