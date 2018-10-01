@@ -14,7 +14,7 @@ defmodule TilexWeb.ChannelController do
     conn
     |> put_status(302)
     |> put_flash(:info, "Authentication required")
-    |> redirect(to: "/")
+    |> redirect(to: post_path(conn, :index))
   end
 
   def show(conn, %{"name" => channel_name} = params) do
@@ -52,7 +52,7 @@ defmodule TilexWeb.ChannelController do
       {:ok, _channel} ->
         conn
         |> put_flash(:info, "Channel created")
-        |> redirect(to: "/")
+        |> redirect(to: post_path(conn, :index))
 
       {:error, changeset} ->
         conn
