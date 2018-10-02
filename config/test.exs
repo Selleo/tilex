@@ -20,10 +20,10 @@ config :tilex, Tilex.Repo,
   pool: Ecto.Adapters.SQL.Sandbox,
   timeout: 30_000
 
-config :tilex, :organization_name, "Hashrocket"
-config :tilex, :canonical_domain, "https://til.hashrocket.com"
-config :tilex, :default_twitter_handle, "hashrocket"
-config :tilex, :hosted_domain, "hashrocket.com"
+config :tilex, :organization_name, "Selleo"
+config :tilex, :canonical_domain, "https://selleo.com/til"
+config :tilex, :default_twitter_handle, "selleo"
+config :tilex, :hosted_domain, "selleo.com"
 config :tilex, :auth_controller, Test.AuthController
 config :tilex, :slack_notifier, Test.Notifications.Notifiers.Slack
 config :tilex, :twitter_notifier, Test.Notifications.Notifiers.Twitter

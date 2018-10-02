@@ -9,7 +9,7 @@ defmodule Tilex.Repo.Migrations.RemoveDefaultFromTwitterHandleColumn do
 
   def down do
     execute """
-      alter table developers alter twitter_handle set default 'hashrocket';
+      alter table developers alter twitter_handle set default 'selleo';
     """
   end
 end

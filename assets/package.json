@@ -1,6 +1,6 @@
 {
-  "repository": "https://github.com/hashrocket/tilex",
-  "description": "TIL is an open-source project by Hashrocket that exists to catalogue the sharing & accumulation of knowledge as it happens day-to-day.",
+  "repository": "https://github.com/selleo/tilex",
+  "description": "TIL is an open-source project that exists to catalogue the sharing & accumulation of knowledge as it happens day-to-day.",
   "license": "MIT",
   "scripts": {
     "deploy": "brunch build --production",
