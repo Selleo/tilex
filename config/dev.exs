@@ -7,7 +7,11 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 config :tilex, TilexWeb.Endpoint,
-  http: [port: System.get_env("PORT") || 4000],
+  http: [port: 4000, protocol_options: [max_request_line_length: 8192, max_header_value_length: 8192]],
+  url: [scheme: "https", host: "localdev.selleo.com", path: "/til"],
+  secret_key_base: "mdTtrt4Y4JrtiTv63NepUe4fs1iSt23VfzKpnXm6mawKl6wN8jEfLfIf2HbyMeKe",
+  render_errors: [view: TilexWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Tilex.PubSub, adapter: Phoenix.PubSub.PG2],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

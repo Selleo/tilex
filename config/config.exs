@@ -8,14 +8,6 @@ use Mix.Config
 # General application configuration
 config :tilex, ecto_repos: [Tilex.Repo]
 
-# Configures the endpoint
-config :tilex, TilexWeb.Endpoint,
-  url: [host: "https://selleo.com", path: "/til"],
-  secret_key_base: "mdTtrt4Y4JrtiTv63NepUe4fs1iSt23VfzKpnXm6mawKl6wN8jEfLfIf2HbyMeKe",
-  render_errors: [view: TilexWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Tilex.PubSub, adapter: Phoenix.PubSub.PG2],
-  http: [protocol_options: [max_request_line_length: 8192, max_header_value_length: 8192]]
-
 # Provide reasonable default for configuration options
 config :tilex, :page_size, 5
 config :tilex, :auth_controller, AuthController

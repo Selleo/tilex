@@ -26,7 +26,7 @@
     <link href='//fonts.googleapis.com/css?family=Raleway:700,900' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Lora:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="alternate feed" type="application/rss+xml" title="Today I Learned" href="/rss">
-    <link rel="canonical" href="<%= Phoenix.Controller.current_url(@conn) %>"/>
+    <link rel="canonical" href="<%= Application.get_env(:tilex, :canonical_domain) <> Phoenix.Controller.current_path(@conn) %>"/>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -56,7 +56,7 @@
 
     <header class="site_head">
       <div>
-        <h1><a href="/">Today I Learned</a></h1>
+        <h1><a href="/til">Today I Learned</a></h1>
       </div>
     </header>
 
