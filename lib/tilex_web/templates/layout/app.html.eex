@@ -26,6 +26,7 @@
     <link href='//fonts.googleapis.com/css?family=Raleway:700,900' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Lora:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="alternate feed" type="application/rss+xml" title="Today I Learned" href="/rss">
+    <link rel="canonical" href="<%= Phoenix.Controller.current_url(@conn) %>"/>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
     <link rel="icon" type="image/png" href="/favicon.png">

@@ -7,8 +7,10 @@ defmodule TilexWeb.SitemapController do
       :posts,
       from(
         p in Tilex.Post,
-        where: p.is_public in ^show_only_public?(conn)
+        where: p.is_public in [true],
+        order_by: p.inserted_at
       )
+      |> Repo.all()
     )
     |> put_layout(false)
     |> render("sitemap.xml")
