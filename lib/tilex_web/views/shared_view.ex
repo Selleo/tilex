@@ -15,7 +15,8 @@ defmodule TilexWeb.SharedView do
   def pluralize(count, object), do: "#{count} #{object}s"
 
   def pagination_href(conn, page) do
-    conn.request_path <> "?" <> URI.encode_query(Map.put(conn.params, "page", page))
+    # TODO: introduce reusable way to prefix all hrefs
+    "/til" <> conn.request_path <> "?" <> URI.encode_query(Map.put(conn.params, "page", page))
   end
 
   def post_creator_or_admin?(conn, post) do

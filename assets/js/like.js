@@ -20,7 +20,7 @@ $(function(){
     var lb = this;
     $.ajax({
       type: "POST",
-      url: "/posts/" + lb.id + "/like.json",
+      url: "/til/posts/" + lb.id + "/like.json",
       data: {},
       success: function(result) {
         $.cookie(lb.likeSlug(), 'liked', { path: '/', expires: 3600 });
@@ -37,7 +37,7 @@ $(function(){
     var lb = this;
     $.ajax({
       type: "POST",
-      url: "/posts/" + lb.id + "/unlike.json",
+      url: "/til/posts/" + lb.id + "/unlike.json",
       data: {},
       success: function(result){
       $.removeCookie(lb.likeSlug(), { path: '/', expires: 3600 });

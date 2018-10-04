@@ -66,10 +66,10 @@
           </h1>
         </header>
         <ul class="post_list" id="channels">
-
           <%= for {count, channel} <- @channels do %>
             <li>
-              <a href="/<%= channel %>"><b>#<%= channel %></b>
+              <% # TODO: introduce reusable way to prefix all hrefs %>
+              <a href="/til/<%= channel %>"><b>#<%= channel %></b>
                 <small><%= count %> posts</small>
               </a>
             </li>
@@ -87,7 +87,8 @@
         <ul class="post_list" id="authors">
           <%= for {count, developer} <- @developers do %>
             <li>
-              <a href="/authors/<%= developer %>"><b><%= developer %></b>
+              <% # TODO: introduce reusable way to prefix all hrefs %>
+              <a href="/til/authors/<%= developer %>"><b><%= developer %></b>
                 <small><%= count %> posts</small>
               </a>
             </li>
