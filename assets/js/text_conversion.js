@@ -3,7 +3,8 @@ import {Socket} from "phoenix"
 export default class TextConversion {
   constructor(properties) {
     this.convertedTextCallback = properties.convertedTextCallback
-    this.socket          = new Socket("/socket")
+    // TODO: fix hardcoded URL
+    this.socket          = new Socket("/til/socket")
     this.channel         = this.socket.channel("text_converter", {})
   }
 
