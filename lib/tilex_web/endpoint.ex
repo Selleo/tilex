@@ -6,7 +6,7 @@ defmodule TilexWeb.Endpoint do
   end
 
   # TODO: fix hardcoded URL
-  socket("/til/socket", TilexWeb.UserSocket)
+  socket("/socket", TilexWeb.UserSocket)
 
   # Serve at "/" the static files from "priv/static" directory.
   #
