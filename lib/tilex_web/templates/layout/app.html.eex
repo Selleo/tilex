@@ -56,7 +56,9 @@
 
     <header class="site_head">
       <div>
-        <h1><a href="/til">Today I Learned</a></h1>
+        <a href="/til">
+            <img class="site_head--logo" src="<%= static_path(@conn, "/static/images/selleo-logo.svg") %>" alt="Selleo" /> Today I Learned
+        </a>
       </div>
     </header>
 

@@ -17,9 +17,26 @@ header.site_head
   z-index: 1
   padding: 2vw 6vw
   text-align: center
+
   div
-    display: inline-block
     position: relative
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    font-size: 5rem
+    .site_head--logo
+      max-width: 16rem
+      margin-right: 3rem
+      border-right: 1px solid rgba(0,0,0,0.12)
+      padding-right: 3rem
+
+  h1
+    font-size: 5vw
+    display: flex
+    align-items: center
+    width: 100%
+    justify-content: center
   a
     display: block
     font-family: $secondary-typeface
