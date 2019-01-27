@@ -30,6 +30,20 @@ header.site_head
       margin-right: 3rem
       border-right: 1px solid rgba(0,0,0,0.12)
       padding-right: 3rem
+    +mobile
+      font-size: 4rem
+      a
+        flex-direction: column
+        text-align: center
+        justify-content: center
+        align-items: center
+      .site_head--logo
+        max-width: 16rem
+        margin: 0 0 1rem
+        border: 0 none
+        padding: 0
+    +tablet
+      font-size: 6rem
 
   h1
     font-size: 5vw
@@ -38,13 +52,14 @@ header.site_head
     width: 100%
     justify-content: center
   a
-    display: block
+    display: flex
+    align-items: center
     font-family: $secondary-typeface
     text-transform: uppercase
     color: $navy
     letter-spacing: .1em
     font-weight: 900
-    font-size: 7vw
+    width: 100%
     line-height: 1
   h2
     position: absolute
