@@ -6,7 +6,7 @@
 import {Socket} from "phoenix"
 
 // TODO: fix hardcoded URL
-let socket = new Socket("/til/socket", {params: {token: window.userToken}})
+let socket = new Socket("https://selleo.com/til/socket/websocket", {params: {token: window.userToken}})
 
 // When you connect, you'll often need to authenticate the client.
 // For example, imagine you have an authentication plug, `MyAuth`,
