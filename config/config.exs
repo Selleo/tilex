@@ -8,6 +8,9 @@ use Mix.Config
 # General application configuration
 config :tilex, ecto_repos: [Tilex.Repo]
 
+config :tilex, TilexWeb.Endpoint,
+  pubsub: [name: Tilex.PubSub, adapter: Phoenix.PubSub.PG2]
+
 # Provide reasonable default for configuration options
 config :tilex, :page_size, 5
 config :tilex, :auth_controller, AuthController

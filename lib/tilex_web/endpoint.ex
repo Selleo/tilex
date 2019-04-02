@@ -5,7 +5,6 @@ defmodule TilexWeb.Endpoint do
     plug(Phoenix.Ecto.SQL.Sandbox)
   end
 
-  # TODO: fix hardcoded URL
   socket("/socket", TilexWeb.UserSocket)
 
   # Serve at "/" the static files from "priv/static" directory.
