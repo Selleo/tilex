@@ -4,7 +4,7 @@ export default class TextConversion {
   constructor(properties) {
     this.convertedTextCallback = properties.convertedTextCallback
     // TODO: fix hardcoded URL
-    this.socket          = new Socket("/til/socket")
+    this.socket          = new Socket("wss://selleo-til.herokuapp.com/socket")
     this.channel         = this.socket.channel("text_converter", {})
   }
 
