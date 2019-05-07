@@ -38,7 +38,7 @@ defmodule Tilex.Mixfile do
       {:cors_plug, "~> 1.2"},
       {:cowboy, "~> 1.0"},
       {:credo, "~> 0.8.7", only: [:dev, :test], runtime: false},
-      {:earmark, github: "pragdave/earmark", ref: "2bc9051"},
+      {:earmark, "~> 1.3.2"},
       {:extwitter, "~> 0.8"},
       {:floki, "~> 0.18.0"},
       {:gettext, "~> 0.13"},
